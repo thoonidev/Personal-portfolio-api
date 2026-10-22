@@ -1,0 +1,20 @@
+# Usar desde un repositorio que tenga portfolio-api como raíz.
+services:
+  - type: web
+    name: thoonidev-portfolio-api
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    envVars:
+      - key: CONTACT_ENABLED
+        value: "true"
+      - key: CONTACT_ALLOWED_ORIGINS
+        value: https://thoonidev.vercel.app
+      - key: CONTACT_TO
+        sync: false
+      - key: CONTACT_FROM
+        sync: false
+      - key: RESEND_API_KEY
+        sync: false

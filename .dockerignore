@@ -1,0 +1,9 @@
+.git
+target
+.settings
+.classpath
+.project
+.env
+.env.*
+README.md
+HELP.md

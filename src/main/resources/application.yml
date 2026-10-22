@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: portfolio-api
+
+server:
+  port: ${PORT:8080}
+  forward-headers-strategy: none
+  error:
+    include-message: never
+    include-stacktrace: never
+
+app:
+  mail:
+    api-key: ${RESEND_API_KEY:}
+  contact:
+    enabled: ${CONTACT_ENABLED:false}
+    recipient: ${CONTACT_TO:}
+    from: ${CONTACT_FROM:}
+    allowed-origins: ${CONTACT_ALLOWED_ORIGINS:http://localhost:5173,http://127.0.0.1:5173}
+    max-requests: 5
+    global-max-requests: 50
+    window: 10m
